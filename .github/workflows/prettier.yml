@@ -52,5 +52,5 @@ jobs:
           title: Run unsafe Prettier
           body: Format code using potentially unsafe dependencies
           branch: unsafe-prettier
-          base: master
+          base: main
           delete-branch: true
