@@ -48,6 +48,11 @@ jobs:
       - name: Prettier
         run: pnpm format
 
+      - name: Git restore
+        run: |
+          git restore package.json
+          git restore pnpm-lock.yaml
+
       - name: Create Pull Request
         uses: peter-evans/create-pull-request@v5
         with:
