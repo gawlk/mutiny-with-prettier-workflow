@@ -43,7 +43,7 @@ jobs:
           pnpm add -D prettier-plugin-tailwindcss @ianvs/prettier-plugin-sort-imports
 
       - name: Prettier
-        run: pnpm prettier
+        run: pnpm format
 
       - name: Create Pull Request
         uses: peter-evans/create-pull-request@v5
