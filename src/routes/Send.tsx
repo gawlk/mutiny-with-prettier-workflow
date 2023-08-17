@@ -1,14 +1,23 @@
+import { Clipboard } from "@capacitor/clipboard";
+import { Capacitor } from "@capacitor/core";
+import { Contact, MutinyInvoice } from "@mutinywallet/mutiny-wasm";
 import {
-    Match,
-    Show,
-    Switch,
     createEffect,
     createMemo,
     createSignal,
-    onMount
+    Match,
+    onMount,
+    Show,
+    Switch
 } from "solid-js";
-import { AmountSats, AmountFiat } from "~/components/Amount";
-import NavBar from "~/components/NavBar";
+import { useNavigate } from "solid-start";
+
+import { Paste } from "~/assets/svg/Paste";
+import { Scan } from "~/assets/svg/Scan";
+import { AmountFiat, AmountSats } from "~/components/Amount";
+import { AmountCard } from "~/components/AmountCard";
+import { Fee } from "~/components/Fee";
+import { InfoBox } from "~/components/InfoBox";
 import {
     Button,
     ButtonLink,
@@ -21,33 +30,26 @@ import {
     SmallHeader,
     VStack
 } from "~/components/layout";
-import { Paste } from "~/assets/svg/Paste";
-import { Scan } from "~/assets/svg/Scan";
-import { useMegaStore } from "~/state/megaStore";
-import { Contact, MutinyInvoice } from "@mutinywallet/mutiny-wasm";
+import { BackButton } from "~/components/layout/BackButton";
+import { BackLink } from "~/components/layout/BackLink";
+import { ExternalLink } from "~/components/layout/ExternalLink";
 import { StyledRadioGroup } from "~/components/layout/Radio";
-import { showToast } from "~/components/Toaster";
-import eify from "~/utils/eify";
+import NavBar from "~/components/NavBar";
+import { StringShower } from "~/components/ShareCard";
 import { MegaCheck } from "~/components/successfail/MegaCheck";
 import { MegaEx } from "~/components/successfail/MegaEx";
-import mempoolTxUrl from "~/utils/mempoolTxUrl";
-import { BackLink } from "~/components/layout/BackLink";
-import { useNavigate } from "solid-start";
-import { TagEditor } from "~/components/TagEditor";
-import { StringShower } from "~/components/ShareCard";
-import { AmountCard } from "~/components/AmountCard";
-import { MutinyTagItem } from "~/utils/tags";
-import { BackButton } from "~/components/layout/BackButton";
-import { Network } from "~/logic/mutinyWalletSetup";
 import { SuccessModal } from "~/components/successfail/SuccessModal";
-import { ExternalLink } from "~/components/layout/ExternalLink";
-import { InfoBox } from "~/components/InfoBox";
+import { TagEditor } from "~/components/TagEditor";
+import { showToast } from "~/components/Toaster";
 import { useI18n } from "~/i18n/context";
+import { Network } from "~/logic/mutinyWalletSetup";
 import { ParsedParams, toParsedParams } from "~/logic/waila";
-import { Clipboard } from "@capacitor/clipboard";
-import { Capacitor } from "@capacitor/core";
+import { useMegaStore } from "~/state/megaStore";
+import eify from "~/utils/eify";
+import mempoolTxUrl from "~/utils/mempoolTxUrl";
+import { MutinyTagItem } from "~/utils/tags";
+
 import { FeedbackLink } from "./Feedback";
-import { Fee } from "~/components/Fee";
 
 export type SendSource = "lightning" | "onchain";
 

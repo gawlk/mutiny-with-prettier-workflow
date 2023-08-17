@@ -1,8 +1,10 @@
-import { SubmitHandler, createForm, required } from "@modular-forms/solid";
+import { createForm, required, SubmitHandler } from "@modular-forms/solid";
+
 import { Button, LargeHeader, VStack } from "~/components/layout";
 import { TextField } from "~/components/layout/TextField";
-import { ContactFormValues } from "./ContactViewer";
 import { useI18n } from "~/i18n/context";
+
+import { ContactFormValues } from "./ContactViewer";
 
 export function ContactForm(props: {
     handleSubmit: SubmitHandler<ContactFormValues>;

@@ -1,3 +1,4 @@
+import { MutinyChannel } from "@mutinywallet/mutiny-wasm";
 import {
     createEffect,
     createMemo,
@@ -11,6 +12,9 @@ import {
     Suspense,
     Switch
 } from "solid-js";
+
+import utxoIcon from "~/assets/icons/coin.svg";
+import wave from "~/assets/wave.gif";
 import {
     CENTER_COLUMN,
     MISSING_LABEL,
@@ -19,32 +23,29 @@ import {
     THREE_COLUMNS,
     UtxoItem
 } from "~/components/Activity";
+import { AmountSats } from "~/components/Amount";
 import {
     Card,
     DefaultMain,
     LargeHeader,
     LoadingSpinner,
-    NiceP,
     MutinyWalletGuard,
+    NiceP,
     SafeArea,
     SmallAmount,
     SmallHeader,
     VStack
 } from "~/components/layout";
 import { BackLink } from "~/components/layout/BackLink";
-import { StyledRadioGroup } from "~/components/layout/Radio";
-import NavBar from "~/components/NavBar";
-import { useMegaStore } from "~/state/megaStore";
-import wave from "~/assets/wave.gif";
-import utxoIcon from "~/assets/icons/coin.svg";
 import { Button } from "~/components/layout/Button";
 import { ProgressBar } from "~/components/layout/ProgressBar";
-import { MutinyChannel } from "@mutinywallet/mutiny-wasm";
-import mempoolTxUrl from "~/utils/mempoolTxUrl";
-import { AmountSats } from "~/components/Amount";
-import { getRedshifted, setRedshifted } from "~/utils/fakeLabels";
-import { Network } from "~/logic/mutinyWalletSetup";
+import { StyledRadioGroup } from "~/components/layout/Radio";
+import NavBar from "~/components/NavBar";
 import { useI18n } from "~/i18n/context";
+import { Network } from "~/logic/mutinyWalletSetup";
+import { useMegaStore } from "~/state/megaStore";
+import { getRedshifted, setRedshifted } from "~/utils/fakeLabels";
+import mempoolTxUrl from "~/utils/mempoolTxUrl";
 
 type ShiftOption = "utxo" | "lightning";
 

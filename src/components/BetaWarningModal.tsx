@@ -1,10 +1,12 @@
 import { Dialog } from "@kobalte/core";
-import { ParentComponent, createSignal } from "solid-js";
+import { createSignal, ParentComponent } from "solid-js";
+
+import { useI18n } from "~/i18n/context";
+import { useMegaStore } from "~/state/megaStore";
+
 import { DIALOG_CONTENT, DIALOG_POSITIONER, OVERLAY } from "./DetailsModal";
 import { ModalCloseButton, SmallHeader } from "./layout";
 import { ExternalLink } from "./layout/ExternalLink";
-import { useI18n } from "~/i18n/context";
-import { useMegaStore } from "~/state/megaStore";
 
 export function BetaWarningModal() {
     const i18n = useI18n();

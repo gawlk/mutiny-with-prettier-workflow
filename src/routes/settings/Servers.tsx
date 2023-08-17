@@ -1,9 +1,5 @@
 import { createForm, url } from "@modular-forms/solid";
-import { TextField } from "~/components/layout/TextField";
-import {
-    MutinyWalletSettingStrings,
-    setSettings
-} from "~/logic/mutinyWalletSetup";
+
 import {
     Button,
     Card,
@@ -13,13 +9,18 @@ import {
     NiceP,
     SafeArea
 } from "~/components/layout";
-import { showToast } from "~/components/Toaster";
-import eify from "~/utils/eify";
-import { ExternalLink } from "~/components/layout/ExternalLink";
 import { BackLink } from "~/components/layout/BackLink";
+import { ExternalLink } from "~/components/layout/ExternalLink";
+import { TextField } from "~/components/layout/TextField";
 import NavBar from "~/components/NavBar";
+import { showToast } from "~/components/Toaster";
 import { useI18n } from "~/i18n/context";
+import {
+    MutinyWalletSettingStrings,
+    setSettings
+} from "~/logic/mutinyWalletSetup";
 import { useMegaStore } from "~/state/megaStore";
+import eify from "~/utils/eify";
 
 export function SettingsStringsEditor() {
     const i18n = useI18n();

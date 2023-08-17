@@ -1,13 +1,15 @@
 import { Dialog } from "@kobalte/core";
-import { JSX, createMemo } from "solid-js";
-import { ModalCloseButton, SmallHeader } from "~/components/layout";
+import { createMemo, JSX } from "solid-js";
+
 import {
     DIALOG_CONTENT,
     DIALOG_POSITIONER,
     OVERLAY
 } from "~/components/DetailsModal";
-import { CopyButton } from "./ShareCard";
+import { ModalCloseButton, SmallHeader } from "~/components/layout";
 import { useI18n } from "~/i18n/context";
+
+import { CopyButton } from "./ShareCard";
 
 export function JsonModal(props: {
     title: string;

@@ -1,21 +1,23 @@
-import { NiceP } from "./layout";
+import { Contact } from "@mutinywallet/mutiny-wasm";
 import {
+    createEffect,
+    createResource,
+    createSignal,
     For,
     Match,
     Show,
-    Switch,
-    createEffect,
-    createResource,
-    createSignal
+    Switch
 } from "solid-js";
-import { useMegaStore } from "~/state/megaStore";
-import { useI18n } from "~/i18n/context";
-import { Contact } from "@mutinywallet/mutiny-wasm";
-import { ActivityItem, HackActivityType } from "./ActivityItem";
-import { DetailsIdModal } from "./DetailsModal";
 import { A } from "solid-start";
-import { LoadingShimmer } from "./BalanceBox";
+
+import { useI18n } from "~/i18n/context";
+import { useMegaStore } from "~/state/megaStore";
 import { createDeepSignal } from "~/utils/deepSignal";
+
+import { ActivityItem, HackActivityType } from "./ActivityItem";
+import { LoadingShimmer } from "./BalanceBox";
+import { DetailsIdModal } from "./DetailsModal";
+import { NiceP } from "./layout";
 
 export const THREE_COLUMNS =
     "grid grid-cols-[auto,1fr,auto] gap-4 py-2 px-2 border-b border-neutral-800 last:border-b-0";

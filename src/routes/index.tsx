@@ -1,8 +1,9 @@
+import { Match, Switch } from "solid-js";
+
 import App from "~/components/App";
-import { Switch, Match } from "solid-js";
-import { useMegaStore } from "~/state/megaStore";
 import { FullscreenLoader } from "~/components/layout";
 import SetupErrorDisplay from "~/components/SetupErrorDisplay";
+import { useMegaStore } from "~/state/megaStore";
 
 export default function Home() {
     const [state, _] = useMegaStore();

@@ -1,7 +1,9 @@
 import { Dialog } from "@kobalte/core";
 import { ParentComponent } from "solid-js";
-import { Button, SmallHeader } from "./layout";
+
 import { useI18n } from "~/i18n/context";
+
+import { Button, SmallHeader } from "./layout";
 
 const OVERLAY = "fixed inset-0 z-50 bg-black/50 backdrop-blur-sm";
 const DIALOG_POSITIONER = "fixed inset-0 z-50 flex items-center justify-center";

@@ -1,17 +1,19 @@
 import { createForm, required } from "@modular-forms/solid";
 import { MutinyChannel, MutinyPeer } from "@mutinywallet/mutiny-wasm";
 import {
+    createMemo,
+    createResource,
+    createSignal,
     For,
     Match,
     Show,
-    Switch,
-    createMemo,
-    createResource,
-    createSignal
+    Switch
 } from "solid-js";
+import { useNavigate } from "solid-start";
+
+import { AmountFiat } from "~/components/Amount";
 import { AmountCard } from "~/components/AmountCard";
-import NavBar from "~/components/NavBar";
-import { showToast } from "~/components/Toaster";
+import { InfoBox } from "~/components/InfoBox";
 import {
     Button,
     Card,
@@ -22,20 +24,19 @@ import {
     VStack
 } from "~/components/layout";
 import { BackLink } from "~/components/layout/BackLink";
+import { ExternalLink } from "~/components/layout/ExternalLink";
 import { TextField } from "~/components/layout/TextField";
+import NavBar from "~/components/NavBar";
+import { MegaCheck } from "~/components/successfail/MegaCheck";
+import { MegaEx } from "~/components/successfail/MegaEx";
+import { SuccessModal } from "~/components/successfail/SuccessModal";
+import { showToast } from "~/components/Toaster";
+import { useI18n } from "~/i18n/context";
+import { Network } from "~/logic/mutinyWalletSetup";
 import { MethodChooser, SendSource } from "~/routes/Send";
 import { useMegaStore } from "~/state/megaStore";
 import eify from "~/utils/eify";
-import { MegaCheck } from "~/components/successfail/MegaCheck";
-import { MegaEx } from "~/components/successfail/MegaEx";
-import { InfoBox } from "~/components/InfoBox";
-import { useNavigate } from "solid-start";
 import mempoolTxUrl from "~/utils/mempoolTxUrl";
-import { SuccessModal } from "~/components/successfail/SuccessModal";
-import { ExternalLink } from "~/components/layout/ExternalLink";
-import { Network } from "~/logic/mutinyWalletSetup";
-import { useI18n } from "~/i18n/context";
-import { AmountFiat } from "~/components/Amount";
 
 const CHANNEL_FEE_ESTIMATE_ADDRESS =
     "bc1qf7546vg73ddsjznzq57z3e8jdn6gtw6au576j07kt6d9j7nz8mzsyn6lgf";

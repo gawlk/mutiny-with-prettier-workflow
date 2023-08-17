@@ -1,28 +1,30 @@
+import { Dialog } from "@kobalte/core";
 import {
-    For,
-    ParentComponent,
-    Show,
     createResource,
     createSignal,
-    onMount,
+    For,
+    Match,
     onCleanup,
-    Switch,
-    Match
+    onMount,
+    ParentComponent,
+    Show,
+    Switch
 } from "solid-js";
-import { Button } from "~/components/layout";
-import { useMegaStore } from "~/state/megaStore";
-import { satsToUsd, usdToSats } from "~/utils/conversions";
-import { Dialog } from "@kobalte/core";
-import close from "~/assets/icons/close.svg";
-import pencil from "~/assets/icons/pencil.svg";
-import currencySwap from "~/assets/icons/currency-swap.svg";
-import { InlineAmount } from "./AmountCard";
-import { DIALOG_CONTENT, DIALOG_POSITIONER } from "~/styles/dialogs";
-import { InfoBox } from "./InfoBox";
-import { Network } from "~/logic/mutinyWalletSetup";
-import { FeesModal } from "./MoreInfoModal";
-import { useI18n } from "~/i18n/context";
 import { useNavigate } from "solid-start";
+
+import close from "~/assets/icons/close.svg";
+import currencySwap from "~/assets/icons/currency-swap.svg";
+import pencil from "~/assets/icons/pencil.svg";
+import { Button } from "~/components/layout";
+import { useI18n } from "~/i18n/context";
+import { Network } from "~/logic/mutinyWalletSetup";
+import { useMegaStore } from "~/state/megaStore";
+import { DIALOG_CONTENT, DIALOG_POSITIONER } from "~/styles/dialogs";
+import { satsToUsd, usdToSats } from "~/utils/conversions";
+
+import { InlineAmount } from "./AmountCard";
+import { InfoBox } from "./InfoBox";
+import { FeesModal } from "./MoreInfoModal";
 
 function fiatInputSanitizer(input: string): string {
     // Make sure only numbers and a single decimal point are allowed

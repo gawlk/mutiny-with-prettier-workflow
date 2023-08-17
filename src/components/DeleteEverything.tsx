@@ -1,5 +1,6 @@
 import initMutinyWallet, { MutinyWallet } from "@mutinywallet/mutiny-wasm";
 import { createSignal } from "solid-js";
+
 import { ConfirmDialog } from "~/components/Dialog";
 import { Button } from "~/components/layout";
 import { showToast } from "~/components/Toaster";

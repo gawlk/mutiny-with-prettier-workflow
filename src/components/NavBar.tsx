@@ -1,11 +1,11 @@
-import mutiny_m from "~/assets/icons/m.svg";
-import airplane from "~/assets/icons/airplane.svg";
-import settings from "~/assets/icons/settings.svg";
-import receive from "~/assets/icons/big-receive.svg";
-import redshift from "~/assets/icons/rs.svg";
-import userClock from "~/assets/icons/user-clock.svg";
-
 import { A } from "solid-start";
+
+import airplane from "~/assets/icons/airplane.svg";
+import receive from "~/assets/icons/big-receive.svg";
+import mutiny_m from "~/assets/icons/m.svg";
+import redshift from "~/assets/icons/rs.svg";
+import settings from "~/assets/icons/settings.svg";
+import userClock from "~/assets/icons/user-clock.svg";
 
 type ActiveTab =
     | "home"

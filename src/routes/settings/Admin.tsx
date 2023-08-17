@@ -1,6 +1,5 @@
 import { DeleteEverything } from "~/components/DeleteEverything";
 import KitchenSink from "~/components/KitchenSink";
-import NavBar from "~/components/NavBar";
 import {
     DefaultMain,
     LargeHeader,
@@ -11,6 +10,7 @@ import {
     VStack
 } from "~/components/layout";
 import { BackLink } from "~/components/layout/BackLink";
+import NavBar from "~/components/NavBar";
 import { useI18n } from "~/i18n/context";
 
 export default function Admin() {

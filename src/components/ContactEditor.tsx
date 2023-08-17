@@ -1,12 +1,14 @@
-import { Match, Switch, createSignal } from "solid-js";
-import { SmallHeader, TinyButton } from "~/components/layout";
 import { Dialog } from "@kobalte/core";
-import close from "~/assets/icons/close.svg";
 import { SubmitHandler } from "@modular-forms/solid";
+import { createSignal, Match, Switch } from "solid-js";
+
+import close from "~/assets/icons/close.svg";
+import { SmallHeader, TinyButton } from "~/components/layout";
+import { useI18n } from "~/i18n/context";
+import { DIALOG_CONTENT, DIALOG_POSITIONER } from "~/styles/dialogs";
+
 import { ContactForm } from "./ContactForm";
 import { ContactFormValues } from "./ContactViewer";
-import { DIALOG_CONTENT, DIALOG_POSITIONER } from "~/styles/dialogs";
-import { useI18n } from "~/i18n/context";
 
 export function ContactEditor(props: {
     createContact: (contact: ContactFormValues) => void;

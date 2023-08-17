@@ -1,8 +1,10 @@
 import { Show } from "solid-js";
-import { ButtonLink, SmallHeader } from "./layout";
-import { useMegaStore } from "~/state/megaStore";
+
 import save from "~/assets/icons/save.svg";
 import { useI18n } from "~/i18n/context";
+import { useMegaStore } from "~/state/megaStore";
+
+import { ButtonLink, SmallHeader } from "./layout";
 
 export function OnboardWarning() {
     const i18n = useI18n();

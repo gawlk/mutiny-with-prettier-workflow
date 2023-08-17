@@ -1,10 +1,12 @@
 import { Show } from "solid-js";
-import { Button, FancyCard, Indicator } from "~/components/layout";
-import { useMegaStore } from "~/state/megaStore";
-import { AmountSats, AmountFiat } from "./Amount";
 import { A, useNavigate } from "solid-start";
+
 import shuffle from "~/assets/icons/shuffle.svg";
+import { Button, FancyCard, Indicator } from "~/components/layout";
 import { useI18n } from "~/i18n/context";
+import { useMegaStore } from "~/state/megaStore";
+
+import { AmountFiat, AmountSats } from "./Amount";
 
 export function LoadingShimmer() {
     return (

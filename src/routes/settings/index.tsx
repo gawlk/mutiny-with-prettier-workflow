@@ -1,3 +1,7 @@
+import { For, Show } from "solid-js";
+import { A } from "solid-start";
+
+import forward from "~/assets/icons/forward.svg";
 import {
     DefaultMain,
     LargeHeader,
@@ -7,9 +11,6 @@ import {
 } from "~/components/layout";
 import { BackLink } from "~/components/layout/BackLink";
 import NavBar from "~/components/NavBar";
-import { A } from "solid-start";
-import { For, Show } from "solid-js";
-import forward from "~/assets/icons/forward.svg";
 import { useI18n } from "~/i18n/context";
 import { useMegaStore } from "~/state/megaStore";
 

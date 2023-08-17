@@ -1,27 +1,29 @@
-import { useMegaStore } from "~/state/megaStore";
-import { Hr, Button, InnerCard, VStack } from "~/components/layout";
+import { Collapsible, TextField } from "@kobalte/core";
+import { MutinyChannel, MutinyPeer } from "@mutinywallet/mutiny-wasm";
 import {
+    createResource,
+    createSignal,
     For,
     Match,
     Show,
     Suspense,
-    Switch,
-    createResource,
-    createSignal
+    Switch
 } from "solid-js";
-import { MutinyChannel, MutinyPeer } from "@mutinywallet/mutiny-wasm";
-import { Collapsible, TextField } from "@kobalte/core";
-import mempoolTxUrl from "~/utils/mempoolTxUrl";
-import eify from "~/utils/eify";
+
 import { ConfirmDialog } from "~/components/Dialog";
+import { Button, Hr, InnerCard, VStack } from "~/components/layout";
 import { showToast } from "~/components/Toaster";
+import { useI18n } from "~/i18n/context";
 import { Network } from "~/logic/mutinyWalletSetup";
+import { useMegaStore } from "~/state/megaStore";
+import eify from "~/utils/eify";
+import mempoolTxUrl from "~/utils/mempoolTxUrl";
+
+import { MiniStringShower } from "./DetailsModal";
 import { ExternalLink } from "./layout/ExternalLink";
+import { ResetRouter } from "./ResetRouter";
 import { Restart } from "./Restart";
 import { ResyncOnchain } from "./ResyncOnchain";
-import { ResetRouter } from "./ResetRouter";
-import { MiniStringShower } from "./DetailsModal";
-import { useI18n } from "~/i18n/context";
 
 // TODO: hopefully I don't have to maintain this type forever but I don't know how to pass it around otherwise
 type RefetchPeersType = (

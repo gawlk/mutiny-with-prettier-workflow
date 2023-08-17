@@ -1,3 +1,20 @@
+import { Clipboard } from "@capacitor/clipboard";
+import { Capacitor } from "@capacitor/core";
+import { TextField as KTextField } from "@kobalte/core";
+import {
+    createForm,
+    custom,
+    required,
+    setValues,
+    SubmitHandler,
+    validate
+} from "@modular-forms/solid";
+import { MutinyWallet } from "@mutinywallet/mutiny-wasm";
+import { createSignal, For, Show, splitProps } from "solid-js";
+
+import pasteIcon from "~/assets/icons/paste.svg";
+import { ConfirmDialog } from "~/components/Dialog";
+import { InfoBox } from "~/components/InfoBox";
 import {
     Button,
     DefaultMain,
@@ -7,29 +24,13 @@ import {
     VStack
 } from "~/components/layout";
 import { BackLink } from "~/components/layout/BackLink";
-import NavBar from "~/components/NavBar";
-import { useMegaStore } from "~/state/megaStore";
-import { For, Show, createSignal, splitProps } from "solid-js";
-import pasteIcon from "~/assets/icons/paste.svg";
-import {
-    SubmitHandler,
-    createForm,
-    custom,
-    required,
-    setValues,
-    validate
-} from "@modular-forms/solid";
-import { TextField as KTextField } from "@kobalte/core";
 import { TextFieldProps } from "~/components/layout/TextField";
+import NavBar from "~/components/NavBar";
 import { showToast } from "~/components/Toaster";
-import eify from "~/utils/eify";
-import { ConfirmDialog } from "~/components/Dialog";
-import { MutinyWallet } from "@mutinywallet/mutiny-wasm";
-import { WORDS_EN } from "~/utils/words";
-import { InfoBox } from "~/components/InfoBox";
-import { Clipboard } from "@capacitor/clipboard";
-import { Capacitor } from "@capacitor/core";
 import { useI18n } from "~/i18n/context";
+import { useMegaStore } from "~/state/megaStore";
+import eify from "~/utils/eify";
+import { WORDS_EN } from "~/utils/words";
 
 type SeedWordsForm = {
     words: string[];

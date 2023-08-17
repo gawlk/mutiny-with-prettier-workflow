@@ -13,6 +13,14 @@ import {
     Show,
     Switch
 } from "solid-js";
+import { useNavigate } from "solid-start";
+
+import side2side from "~/assets/icons/side-to-side.svg";
+import { AmountFiat, AmountSats } from "~/components/Amount";
+import { AmountCard } from "~/components/AmountCard";
+import { Fee } from "~/components/Fee";
+import { InfoBox } from "~/components/InfoBox";
+import { IntegratedQr } from "~/components/IntegratedQR";
 import {
     Button,
     Card,
@@ -23,31 +31,24 @@ import {
     SafeArea,
     SimpleDialog
 } from "~/components/layout";
-import NavBar from "~/components/NavBar";
-import { useMegaStore } from "~/state/megaStore";
-import { objectToSearchParams } from "~/utils/objectToSearchParams";
-import mempoolTxUrl from "~/utils/mempoolTxUrl";
-import { AmountSats, AmountFiat } from "~/components/Amount";
-import { BackLink } from "~/components/layout/BackLink";
-import { TagEditor } from "~/components/TagEditor";
-import { StyledRadioGroup } from "~/components/layout/Radio";
-import { showToast } from "~/components/Toaster";
-import { useNavigate } from "solid-start";
-import { AmountCard } from "~/components/AmountCard";
 import { BackButton } from "~/components/layout/BackButton";
-import { MutinyTagItem } from "~/utils/tags";
-import { Network } from "~/logic/mutinyWalletSetup";
-import { SuccessModal } from "~/components/successfail/SuccessModal";
-import { MegaCheck } from "~/components/successfail/MegaCheck";
+import { BackLink } from "~/components/layout/BackLink";
 import { ExternalLink } from "~/components/layout/ExternalLink";
-import { InfoBox } from "~/components/InfoBox";
+import { StyledRadioGroup } from "~/components/layout/Radio";
 import { FeesModal } from "~/components/MoreInfoModal";
-import { IntegratedQr } from "~/components/IntegratedQR";
-import side2side from "~/assets/icons/side-to-side.svg";
-import eify from "~/utils/eify";
-import { matchError } from "~/logic/errorDispatch";
+import NavBar from "~/components/NavBar";
+import { MegaCheck } from "~/components/successfail/MegaCheck";
+import { SuccessModal } from "~/components/successfail/SuccessModal";
+import { TagEditor } from "~/components/TagEditor";
+import { showToast } from "~/components/Toaster";
 import { useI18n } from "~/i18n/context";
-import { Fee } from "~/components/Fee";
+import { matchError } from "~/logic/errorDispatch";
+import { Network } from "~/logic/mutinyWalletSetup";
+import { useMegaStore } from "~/state/megaStore";
+import eify from "~/utils/eify";
+import mempoolTxUrl from "~/utils/mempoolTxUrl";
+import { objectToSearchParams } from "~/utils/objectToSearchParams";
+import { MutinyTagItem } from "~/utils/tags";
 
 type OnChainTx = {
     transaction: {
@@ -289,9 +290,8 @@ export default function Receive() {
             try {
                 // Lightning invoice might be blank
                 if (lightning) {
-                    const invoice = await state.mutiny_wallet?.get_invoice(
-                        lightning
-                    );
+                    const invoice =
+                        await state.mutiny_wallet?.get_invoice(lightning);
 
                     // If the invoice has a fees amount that's probably the LSP fee
                     if (invoice?.fees_paid) {

@@ -1,21 +1,23 @@
-import { DefaultMain, SafeArea, VStack, Card } from "~/components/layout";
-import BalanceBox, { LoadingShimmer } from "~/components/BalanceBox";
-import NavBar from "~/components/NavBar";
-import ReloadPrompt from "~/components/Reload";
-import { A } from "solid-start";
-import { OnboardWarning } from "~/components/OnboardWarning";
-import { CombinedActivity } from "./Activity";
-import { useMegaStore } from "~/state/megaStore";
 import { Match, Show, Suspense, Switch } from "solid-js";
-import { BetaWarningModal } from "~/components/BetaWarningModal";
+import { A } from "solid-start";
+
 import settings from "~/assets/icons/settings.svg";
 import pixelLogo from "~/assets/mutiny-pixel-logo.png";
 import plusLogo from "~/assets/mutiny-plus-logo.png";
-import { PendingNwc } from "./PendingNwc";
+import BalanceBox, { LoadingShimmer } from "~/components/BalanceBox";
+import { BetaWarningModal } from "~/components/BetaWarningModal";
+import { Card, DefaultMain, SafeArea, VStack } from "~/components/layout";
+import NavBar from "~/components/NavBar";
+import { OnboardWarning } from "~/components/OnboardWarning";
+import ReloadPrompt from "~/components/Reload";
+import { useI18n } from "~/i18n/context";
+import { FeedbackLink } from "~/routes/Feedback";
+import { useMegaStore } from "~/state/megaStore";
+
+import { CombinedActivity } from "./Activity";
 import { DecryptDialog } from "./DecryptDialog";
 import { LoadingIndicator } from "./LoadingIndicator";
-import { FeedbackLink } from "~/routes/Feedback";
-import { useI18n } from "~/i18n/context";
+import { PendingNwc } from "./PendingNwc";
 
 export default function App() {
     const i18n = useI18n();

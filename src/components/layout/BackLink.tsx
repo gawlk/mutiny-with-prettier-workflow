@@ -1,4 +1,5 @@
 import { A } from "solid-start";
+
 import { Back } from "~/assets/svg/Back";
 import { useI18n } from "~/i18n/context";
 

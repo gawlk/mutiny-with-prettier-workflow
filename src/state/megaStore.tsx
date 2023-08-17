@@ -1,29 +1,30 @@
 /* @refresh reload */
 
 // Inspired by https://github.com/solidjs/solid-realworld/blob/main/src/store/index.js
+import { MutinyBalance, MutinyWallet } from "@mutinywallet/mutiny-wasm";
 import {
-    ParentComponent,
     createContext,
     createEffect,
     onCleanup,
     onMount,
+    ParentComponent,
     useContext
 } from "solid-js";
 import { createStore } from "solid-js/store";
+
+import { checkBrowserCompatibility } from "~/logic/browserCompatibility";
 import {
-    MutinyWalletSettingStrings,
     doubleInitDefense,
     getSettings,
     initializeWasm,
+    MutinyWalletSettingStrings,
     setupMutinyWallet
 } from "~/logic/mutinyWalletSetup";
-import { MutinyBalance, MutinyWallet } from "@mutinywallet/mutiny-wasm";
-import { MutinyTagItem } from "~/utils/tags";
-import { checkBrowserCompatibility } from "~/logic/browserCompatibility";
-import eify from "~/utils/eify";
-import { timeout } from "~/utils/timeout";
 import { ParsedParams } from "~/logic/waila";
+import eify from "~/utils/eify";
 import { subscriptionValid } from "~/utils/subscriptions";
+import { MutinyTagItem } from "~/utils/tags";
+import { timeout } from "~/utils/timeout";
 
 const MegaStoreContext = createContext<MegaStore>();
 

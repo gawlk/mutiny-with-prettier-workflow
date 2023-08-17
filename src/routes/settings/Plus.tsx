@@ -1,15 +1,17 @@
 import {
+    createResource,
+    createSignal,
     Match,
     Show,
     Suspense,
-    Switch,
-    createResource,
-    createSignal
+    Switch
 } from "solid-js";
 import { A } from "solid-start";
+
+import party from "~/assets/party.gif";
+import { LoadingShimmer } from "~/components/BalanceBox";
 import { ConfirmDialog } from "~/components/Dialog";
 import { InfoBox } from "~/components/InfoBox";
-import NavBar from "~/components/NavBar";
 import {
     Button,
     DefaultMain,
@@ -22,11 +24,10 @@ import {
     VStack
 } from "~/components/layout";
 import { BackLink } from "~/components/layout/BackLink";
+import NavBar from "~/components/NavBar";
+import { useI18n } from "~/i18n/context";
 import { useMegaStore } from "~/state/megaStore";
 import eify from "~/utils/eify";
-import party from "~/assets/party.gif";
-import { LoadingShimmer } from "~/components/BalanceBox";
-import { useI18n } from "~/i18n/context";
 import { subscriptionValid } from "~/utils/subscriptions";
 
 function Perks(props: { alreadySubbed?: boolean }) {

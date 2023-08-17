@@ -12,9 +12,12 @@ import {
     Scripts,
     Title
 } from "solid-start";
+
 import "./root.css";
-import { Provider as MegaStoreProvider } from "~/state/megaStore";
+
 import { Toaster } from "~/components/Toaster";
+import { Provider as MegaStoreProvider } from "~/state/megaStore";
+
 import ErrorDisplay from "./components/ErrorDisplay";
 import { I18nProvider } from "./components/I18nProvider";
 

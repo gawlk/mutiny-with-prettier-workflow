@@ -1,6 +1,8 @@
 import { Progress } from "@kobalte/core";
-import { SmallHeader } from ".";
+
 import { useI18n } from "~/i18n/context";
+
+import { SmallHeader } from ".";
 
 export default function formatNumber(num: number) {
     const map = [

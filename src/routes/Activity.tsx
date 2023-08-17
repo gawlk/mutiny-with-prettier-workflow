@@ -1,26 +1,27 @@
-import { For, Show, Suspense, createResource } from "solid-js";
-import NavBar from "~/components/NavBar";
+import { Tabs } from "@kobalte/core";
+import { Contact } from "@mutinywallet/mutiny-wasm";
+import { createResource, For, Show, Suspense } from "solid-js";
+
+import { CombinedActivity } from "~/components/Activity";
+import { LoadingShimmer } from "~/components/BalanceBox";
+import { ContactEditor } from "~/components/ContactEditor";
+import { ContactFormValues, ContactViewer } from "~/components/ContactViewer";
 import {
     Button,
     Card,
     DefaultMain,
     LargeHeader,
-    NiceP,
     MutinyWalletGuard,
+    NiceP,
     SafeArea,
     VStack
 } from "~/components/layout";
 import { BackLink } from "~/components/layout/BackLink";
-import { CombinedActivity } from "~/components/Activity";
-import { Tabs } from "@kobalte/core";
-import { gradientsPerContact } from "~/utils/gradientHash";
-import { ContactEditor } from "~/components/ContactEditor";
-import { ContactFormValues, ContactViewer } from "~/components/ContactViewer";
-import { useMegaStore } from "~/state/megaStore";
-import { Contact } from "@mutinywallet/mutiny-wasm";
+import NavBar from "~/components/NavBar";
 import { showToast } from "~/components/Toaster";
-import { LoadingShimmer } from "~/components/BalanceBox";
 import { useI18n } from "~/i18n/context";
+import { useMegaStore } from "~/state/megaStore";
+import { gradientsPerContact } from "~/utils/gradientHash";
 
 function ContactRow() {
     const i18n = useI18n();

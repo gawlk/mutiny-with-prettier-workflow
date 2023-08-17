@@ -1,10 +1,12 @@
 import { Dialog } from "@kobalte/core";
-import { ParentComponent, createSignal, JSXElement } from "solid-js";
+import { createSignal, JSXElement, ParentComponent } from "solid-js";
+
+import help from "~/assets/icons/help.svg";
+import { useI18n } from "~/i18n/context";
+
 import { DIALOG_CONTENT, DIALOG_POSITIONER, OVERLAY } from "./DetailsModal";
 import { ModalCloseButton, SmallHeader } from "./layout";
 import { ExternalLink } from "./layout/ExternalLink";
-import help from "~/assets/icons/help.svg";
-import { useI18n } from "~/i18n/context";
 
 export function FeesModal(props: { icon?: boolean }) {
     const i18n = useI18n();

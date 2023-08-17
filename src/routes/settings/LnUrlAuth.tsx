@@ -1,6 +1,6 @@
 import { TextField } from "@kobalte/core";
 import { createSignal } from "solid-js";
-import NavBar from "~/components/NavBar";
+
 import {
     Button,
     DefaultMain,
@@ -10,8 +10,9 @@ import {
     SafeArea
 } from "~/components/layout";
 import { BackLink } from "~/components/layout/BackLink";
-import { useMegaStore } from "~/state/megaStore";
+import NavBar from "~/components/NavBar";
 import { useI18n } from "~/i18n/context";
+import { useMegaStore } from "~/state/megaStore";
 
 export default function LnUrlAuth() {
     const i18n = useI18n();

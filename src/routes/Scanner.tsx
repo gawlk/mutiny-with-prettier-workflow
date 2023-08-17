@@ -1,13 +1,14 @@
-import Reader from "~/components/Reader";
-import { createEffect, createSignal } from "solid-js";
-import { useNavigate } from "solid-start";
-import { Button } from "~/components/layout";
-import { showToast } from "~/components/Toaster";
-import { useMegaStore } from "~/state/megaStore";
-import { toParsedParams } from "~/logic/waila";
 import { Clipboard } from "@capacitor/clipboard";
 import { Capacitor } from "@capacitor/core";
+import { createEffect, createSignal } from "solid-js";
+import { useNavigate } from "solid-start";
+
+import { Button } from "~/components/layout";
+import Reader from "~/components/Reader";
+import { showToast } from "~/components/Toaster";
 import { useI18n } from "~/i18n/context";
+import { toParsedParams } from "~/logic/waila";
+import { useMegaStore } from "~/state/megaStore";
 
 export default function Scanner() {
     const i18n = useI18n();
