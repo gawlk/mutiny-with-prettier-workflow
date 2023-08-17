@@ -48,7 +48,9 @@ jobs:
       - name: Create Pull Request
         uses: peter-evans/create-pull-request@v5
         with:
-          commit-message: unsafe format
+          commit-message: Workflow unsafe format
+          committer: GitHub <noreply@github.com>
+          author: GitHub <noreply@github.com>
           title: Run unsafe Prettier
           body: Format code using potentially unsafe dependencies
           branch: unsafe-prettier
