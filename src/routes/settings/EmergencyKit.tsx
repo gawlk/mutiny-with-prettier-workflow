@@ -1,8 +1,5 @@
 import { DeleteEverything } from "~/components/DeleteEverything";
 import { ImportExport } from "~/components/ImportExport";
-import { LoadingIndicator } from "~/components/LoadingIndicator";
-import { Logs } from "~/components/Logs";
-import NavBar from "~/components/NavBar";
 import {
     DefaultMain,
     LargeHeader,
@@ -13,6 +10,9 @@ import {
 } from "~/components/layout";
 import { BackLink } from "~/components/layout/BackLink";
 import { ExternalLink } from "~/components/layout/ExternalLink";
+import { LoadingIndicator } from "~/components/LoadingIndicator";
+import { Logs } from "~/components/Logs";
+import NavBar from "~/components/NavBar";
 import { useI18n } from "~/i18n/context";
 
 function EmergencyStack() {

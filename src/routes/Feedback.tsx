@@ -1,14 +1,16 @@
 import {
-    SubmitHandler,
     createForm,
     email,
     getValue,
     required,
-    setValue
+    setValue,
+    SubmitHandler
 } from "@modular-forms/solid";
-import { Match, Show, Switch, createSignal } from "solid-js";
+import { createSignal, Match, Show, Switch } from "solid-js";
 import { A, useLocation } from "solid-start";
-import NavBar from "~/components/NavBar";
+
+import feedback from "~/assets/icons/feedback.svg";
+import { InfoBox } from "~/components/InfoBox";
 import {
     Button,
     ButtonLink,
@@ -23,11 +25,10 @@ import { BackPop } from "~/components/layout/BackPop";
 import { ExternalLink } from "~/components/layout/ExternalLink";
 import { StyledRadioGroup } from "~/components/layout/Radio";
 import { TextField } from "~/components/layout/TextField";
-import feedback from "~/assets/icons/feedback.svg";
-import { InfoBox } from "~/components/InfoBox";
-import eify from "~/utils/eify";
+import NavBar from "~/components/NavBar";
 import { MegaCheck } from "~/components/successfail/MegaCheck";
 import { useI18n } from "~/i18n/context";
+import eify from "~/utils/eify";
 
 const FEEDBACK_API = import.meta.env.VITE_FEEDBACK;
 

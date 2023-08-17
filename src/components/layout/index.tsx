@@ -1,31 +1,33 @@
 import {
+    Collapsible,
+    Dialog,
+    Checkbox as KCheckbox,
+    Separator
+} from "@kobalte/core";
+import {
+    createResource,
+    createSignal,
     JSX,
     Match,
     ParentComponent,
     Show,
     Suspense,
-    Switch,
-    createResource,
-    createSignal
+    Switch
 } from "solid-js";
-import Linkify from "./Linkify";
-import { Button, ButtonLink } from "./Button";
-import {
-    Collapsible,
-    Checkbox as KCheckbox,
-    Dialog,
-    Separator
-} from "@kobalte/core";
-import { useMegaStore } from "~/state/megaStore";
-import check from "~/assets/icons/check.svg";
-import { MutinyTagItem } from "~/utils/tags";
-import { generateGradient } from "~/utils/gradientHash";
-import close from "~/assets/icons/close.svg";
 import { A } from "solid-start";
+
+import check from "~/assets/icons/check.svg";
+import close from "~/assets/icons/close.svg";
 import down from "~/assets/icons/down.svg";
-import { DecryptDialog } from "../DecryptDialog";
 import { LoadingIndicator } from "~/components/LoadingIndicator";
 import { useI18n } from "~/i18n/context";
+import { useMegaStore } from "~/state/megaStore";
+import { generateGradient } from "~/utils/gradientHash";
+import { MutinyTagItem } from "~/utils/tags";
+
+import { DecryptDialog } from "../DecryptDialog";
+import { Button, ButtonLink } from "./Button";
+import Linkify from "./Linkify";
 
 export { Button, ButtonLink, Linkify };
 

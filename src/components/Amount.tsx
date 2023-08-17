@@ -1,9 +1,10 @@
 import { Show } from "solid-js";
-import { useMegaStore } from "~/state/megaStore";
-import { satsToUsd } from "~/utils/conversions";
+
 import bolt from "~/assets/icons/bolt.svg";
 import chain from "~/assets/icons/chain.svg";
 import { useI18n } from "~/i18n/context";
+import { useMegaStore } from "~/state/megaStore";
+import { satsToUsd } from "~/utils/conversions";
 
 function prettyPrintAmount(n?: number | bigint): string {
     if (!n || n.valueOf() === 0) {

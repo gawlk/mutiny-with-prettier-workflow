@@ -1,6 +1,8 @@
 import { useLocation, useNavigate } from "solid-start";
-import { BackButton } from "./BackButton";
+
 import { useI18n } from "~/i18n/context";
+
+import { BackButton } from "./BackButton";
 
 type StateWithPrevious = {
     previous?: string;

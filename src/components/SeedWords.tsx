@@ -1,7 +1,8 @@
-import { For, Match, Switch, createMemo, createSignal } from "solid-js";
-import { useCopy } from "~/utils/useCopy";
+import { createMemo, createSignal, For, Match, Switch } from "solid-js";
+
 import copyIcon from "~/assets/icons/copy.svg";
 import { useI18n } from "~/i18n/context";
+import { useCopy } from "~/utils/useCopy";
 
 export function SeedWords(props: {
     words: string;

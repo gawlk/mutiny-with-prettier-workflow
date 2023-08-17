@@ -1,36 +1,36 @@
 import { Dialog } from "@kobalte/core";
+import { MutinyChannel, MutinyInvoice } from "@mutinywallet/mutiny-wasm";
 import {
+    createEffect,
+    createMemo,
+    createResource,
     For,
     Match,
     ParentComponent,
     Show,
     Suspense,
-    Switch,
-    createEffect,
-    createMemo,
-    createResource
+    Switch
 } from "solid-js";
-import { Hr, ModalCloseButton, TinyButton, VStack } from "~/components/layout";
-import { MutinyChannel, MutinyInvoice } from "@mutinywallet/mutiny-wasm";
-import { OnChainTx } from "./Activity";
 
 import bolt from "~/assets/icons/bolt-black.svg";
 import chain from "~/assets/icons/chain-black.svg";
 import copyIcon from "~/assets/icons/copy.svg";
 import shuffle from "~/assets/icons/shuffle-black.svg";
-
-import { ActivityAmount, HackActivityType } from "./ActivityItem";
-import { CopyButton, TruncateMiddle } from "./ShareCard";
-import { prettyPrintTime } from "~/utils/prettyPrintTime";
+import { Hr, ModalCloseButton, TinyButton, VStack } from "~/components/layout";
+import { useI18n } from "~/i18n/context";
+import { Network } from "~/logic/mutinyWalletSetup";
 import { useMegaStore } from "~/state/megaStore";
+import mempoolTxUrl from "~/utils/mempoolTxUrl";
+import { prettyPrintTime } from "~/utils/prettyPrintTime";
 import { MutinyTagItem, tagToMutinyTag } from "~/utils/tags";
 import { useCopy } from "~/utils/useCopy";
-import mempoolTxUrl from "~/utils/mempoolTxUrl";
-import { Network } from "~/logic/mutinyWalletSetup";
+
+import { OnChainTx } from "./Activity";
+import { ActivityAmount, HackActivityType } from "./ActivityItem";
 import { AmountSmall } from "./Amount";
-import { ExternalLink } from "./layout/ExternalLink";
 import { InfoBox } from "./InfoBox";
-import { useI18n } from "~/i18n/context";
+import { ExternalLink } from "./layout/ExternalLink";
+import { CopyButton, TruncateMiddle } from "./ShareCard";
 
 type ChannelClosure = {
     channel_id: string;
@@ -248,8 +248,8 @@ function OnchainDetails(props: { info: OnChainTx; kind?: HackActivityType }) {
                     await (state.mutiny_wallet?.list_channels() as Promise<
                         MutinyChannel[]
                     >);
-                const channel = channels.find((channel) =>
-                    channel.outpoint?.startsWith(props.info.txid)
+                const channel = channels.find(
+                    (channel) => channel.outpoint?.startsWith(props.info.txid)
                 );
                 return channel;
             } catch (e) {

@@ -1,16 +1,16 @@
-import { Match, ParentComponent, Switch, createResource } from "solid-js";
+import { Contact } from "@mutinywallet/mutiny-wasm";
+import { createResource, Match, ParentComponent, Switch } from "solid-js";
+
 import bolt from "~/assets/icons/bolt.svg";
 import chain from "~/assets/icons/chain.svg";
+import off from "~/assets/icons/download-channel.svg";
 import shuffle from "~/assets/icons/shuffle.svg";
 import on from "~/assets/icons/upload-channel.svg";
-import off from "~/assets/icons/download-channel.svg";
-import { timeAgo } from "~/utils/prettyPrintTime";
-
-import { generateGradient } from "~/utils/gradientHash";
-import { useMegaStore } from "~/state/megaStore";
-import { Contact } from "@mutinywallet/mutiny-wasm";
-import { useI18n } from "~/i18n/context";
 import { AmountFiat, AmountSats } from "~/components/Amount";
+import { useI18n } from "~/i18n/context";
+import { useMegaStore } from "~/state/megaStore";
+import { generateGradient } from "~/utils/gradientHash";
+import { timeAgo } from "~/utils/prettyPrintTime";
 
 export const ActivityAmount: ParentComponent<{
     amount: string;

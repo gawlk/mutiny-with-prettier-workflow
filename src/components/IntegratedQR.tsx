@@ -1,14 +1,16 @@
 import { Match, Show, Switch } from "solid-js";
 import { QRCodeSVG } from "solid-qr-code";
-import { ReceiveFlavor } from "~/routes/Receive";
-import { useCopy } from "~/utils/useCopy";
-import { AmountSats, AmountFiat } from "./Amount";
-import { TruncateMiddle } from "./ShareCard";
+
+import boltBlack from "~/assets/icons/bolt-black.svg";
+import chainBlack from "~/assets/icons/chain-black.svg";
 import copyBlack from "~/assets/icons/copy-black.svg";
 import shareBlack from "~/assets/icons/share-black.svg";
-import chainBlack from "~/assets/icons/chain-black.svg";
-import boltBlack from "~/assets/icons/bolt-black.svg";
 import { useI18n } from "~/i18n/context";
+import { ReceiveFlavor } from "~/routes/Receive";
+import { useCopy } from "~/utils/useCopy";
+
+import { AmountFiat, AmountSats } from "./Amount";
+import { TruncateMiddle } from "./ShareCard";
 
 function KindIndicator(props: { kind: ReceiveFlavor }) {
     const i18n = useI18n();

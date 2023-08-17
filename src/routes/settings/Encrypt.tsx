@@ -1,23 +1,24 @@
+import { createForm } from "@modular-forms/solid";
+import { createSignal, Show } from "solid-js";
+
+import { InfoBox } from "~/components/InfoBox";
 import {
     Button,
+    ButtonLink,
     DefaultMain,
     LargeHeader,
-    NiceP,
     MutinyWalletGuard,
+    NiceP,
     SafeArea,
-    VStack,
-    ButtonLink
+    VStack
 } from "~/components/layout";
-import NavBar from "~/components/NavBar";
-import { useMegaStore } from "~/state/megaStore";
-import { Show, createSignal } from "solid-js";
 import { BackLink } from "~/components/layout/BackLink";
-import { createForm } from "@modular-forms/solid";
 import { TextField } from "~/components/layout/TextField";
-import { timeout } from "~/utils/timeout";
-import eify from "~/utils/eify";
-import { InfoBox } from "~/components/InfoBox";
+import NavBar from "~/components/NavBar";
 import { useI18n } from "~/i18n/context";
+import { useMegaStore } from "~/state/megaStore";
+import eify from "~/utils/eify";
+import { timeout } from "~/utils/timeout";
 
 type EncryptPasswordForm = {
     existingPassword: string;

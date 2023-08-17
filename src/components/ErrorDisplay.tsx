@@ -1,4 +1,5 @@
 import { A, Title } from "solid-start";
+
 import {
     Button,
     DefaultMain,
@@ -7,8 +8,9 @@ import {
     SafeArea,
     SmallHeader
 } from "~/components/layout";
-import { ExternalLink } from "./layout/ExternalLink";
 import { useI18n } from "~/i18n/context";
+
+import { ExternalLink } from "./layout/ExternalLink";
 
 export default function ErrorDisplay(props: { error: Error }) {
     const i18n = useI18n();

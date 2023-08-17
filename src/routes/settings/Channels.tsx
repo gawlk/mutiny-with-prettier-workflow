@@ -1,5 +1,6 @@
-import { Match, Switch, createResource } from "solid-js";
-import { useMegaStore } from "~/state/megaStore";
+import { createResource, Match, Switch } from "solid-js";
+
+import { AmountSmall } from "~/components/Amount";
 import {
     Card,
     DefaultMain,
@@ -11,10 +12,10 @@ import {
     TinyText,
     VStack
 } from "~/components/layout";
-import { AmountSmall } from "~/components/Amount";
 import { BackLink } from "~/components/layout/BackLink";
 import NavBar from "~/components/NavBar";
 import { useI18n } from "~/i18n/context";
+import { useMegaStore } from "~/state/megaStore";
 
 function BalanceBar(props: { inbound: number; outbound: number }) {
     const i18n = useI18n();

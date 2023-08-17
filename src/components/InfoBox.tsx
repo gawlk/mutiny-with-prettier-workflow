@@ -1,4 +1,5 @@
 import { ParentComponent } from "solid-js";
+
 import info from "~/assets/icons/info.svg";
 
 export const InfoBox: ParentComponent<{

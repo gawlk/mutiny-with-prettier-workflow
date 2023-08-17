@@ -1,10 +1,9 @@
 import { NwcProfile } from "@mutinywallet/mutiny-wasm";
-import { For, Show, createResource, createSignal } from "solid-js";
+import { createResource, createSignal, For, Show } from "solid-js";
 import { QRCodeSVG } from "solid-qr-code";
+
 import { KeyValue, MiniStringShower } from "~/components/DetailsModal";
 import { InfoBox } from "~/components/InfoBox";
-import NavBar from "~/components/NavBar";
-import { ShareCard } from "~/components/ShareCard";
 import {
     Button,
     Collapser,
@@ -19,9 +18,11 @@ import {
 } from "~/components/layout";
 import { BackLink } from "~/components/layout/BackLink";
 import { TextField } from "~/components/layout/TextField";
+import NavBar from "~/components/NavBar";
+import { ShareCard } from "~/components/ShareCard";
+import { useI18n } from "~/i18n/context";
 import { useMegaStore } from "~/state/megaStore";
 import eify from "~/utils/eify";
-import { useI18n } from "~/i18n/context";
 
 function Nwc() {
     const i18n = useI18n();

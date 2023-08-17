@@ -1,4 +1,6 @@
+import { Match, Switch } from "solid-js";
 import { Title } from "solid-start";
+
 import {
     DefaultMain,
     LargeHeader,
@@ -6,13 +8,13 @@ import {
     SafeArea,
     SmallHeader
 } from "~/components/layout";
-import { ExternalLink } from "./layout/ExternalLink";
-import { Match, Switch } from "solid-js";
-import { ImportExport } from "./ImportExport";
-import { Logs } from "./Logs";
-import { DeleteEverything } from "./DeleteEverything";
-import { FeedbackLink } from "~/routes/Feedback";
 import { useI18n } from "~/i18n/context";
+import { FeedbackLink } from "~/routes/Feedback";
+
+import { DeleteEverything } from "./DeleteEverything";
+import { ImportExport } from "./ImportExport";
+import { ExternalLink } from "./layout/ExternalLink";
+import { Logs } from "./Logs";
 
 function ErrorFooter() {
     return (

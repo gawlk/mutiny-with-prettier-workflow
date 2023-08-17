@@ -1,5 +1,6 @@
 import { Show } from "solid-js";
 import { QRCodeSVG } from "solid-qr-code";
+
 import { useI18n } from "~/i18n/context";
 import { useCopy } from "~/utils/useCopy";
 
